@@ -100,10 +100,10 @@ class Home extends StatelessWidget {
             const SizedBox(
               height: 50.0,
             ),
-            //  EducationSection(),
-            // SizedBox(
-            //   height: 50.0,
-            // ),
+            // EducationSection(),
+            //  SizedBox(
+            //    height: 50.0,
+            //  ),
             const SkillSection(),
             const SizedBox(
               height: 50.0,

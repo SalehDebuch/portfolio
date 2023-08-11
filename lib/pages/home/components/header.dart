@@ -22,6 +22,7 @@ List<HeaderItem> headerItems = [
       onTap: () {
         ScrollHelper.scrollTo(Globals.iosKey);
       }),
+
   // HeaderItem(
   //     title: "EXPERINCES",
   //     onTap: () {
@@ -152,9 +153,9 @@ class HeaderRow extends StatelessWidget {
     return ResponsiveVisibility(
       // This header row is only visible when the screen is larger than a mobile device.
       visible: false,
-      visibleConditions: [
-        Condition.largerThan(value: MOBILE),
-      ],
+      // visibleConditions: [
+      //   Condition.largerThan(value: MOBILE),
+      // ],
       // This row contains a list of header items, which can be either text or buttons.
       child: Row(
         children: headerItems

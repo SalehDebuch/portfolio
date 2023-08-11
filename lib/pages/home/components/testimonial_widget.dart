@@ -44,11 +44,10 @@ Widget _buildUi(double width) {
   return Center(
     child: LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        return ResponsiveScaledBox(
-          // maxWidth: width,
-          // minWidth: width,
-          // defaultScale: false,
-          width: width,
+        return ResponsiveWrapper(
+          maxWidth: width,
+          minWidth: width,
+          defaultScale: false,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

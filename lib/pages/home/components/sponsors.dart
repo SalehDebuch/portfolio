@@ -30,11 +30,10 @@ class Sponsors extends StatelessWidget {
 
 Widget _buildUi(double width) {
   return Center(
-    child: ResponsiveScaledBox(
-      // minWidth: width,
-      // maxWidth: width,
-      // defaultScale: false,
-      width: width,
+    child: ResponsiveWrapper(
+      minWidth: width,
+      maxWidth: width,
+      defaultScale: false,
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return Wrap(

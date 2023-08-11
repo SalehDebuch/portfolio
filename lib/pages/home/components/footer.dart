@@ -44,6 +44,7 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // color: Colors.black,
       key: Globals.fotterKey,
       child: ScreenHelper(
         desktop: _buildUi(kDesktopMaxWidth, context),
@@ -56,11 +57,10 @@ class Footer extends StatelessWidget {
 
 Widget _buildUi(double width, BuildContext context) {
   return Center(
-    child: ResponsiveScaledBox(
-      // maxWidth: width,
-      // minWidth: width,
-      // defaultScale: false,
-      width: width,
+    child: ResponsiveWrapper(
+      maxWidth: width,
+      minWidth: width,
+      defaultScale: false,
       child: LayoutBuilder(
         builder: (context, constraints) {
           return Column(

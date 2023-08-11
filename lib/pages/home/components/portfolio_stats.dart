@@ -29,11 +29,10 @@ class PortfolioStats extends StatelessWidget {
   }
 
   Widget _buildUi(double width, BuildContext context) {
-    return ResponsiveScaledBox(
-      // maxWidth: width,
-      // minWidth: width,
-      // defaultScale: false,
-      width: width,
+    return ResponsiveWrapper(
+      maxWidth: width,
+      minWidth: width,
+      defaultScale: false,
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraint) {
           return Wrap(

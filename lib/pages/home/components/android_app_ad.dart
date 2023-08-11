@@ -26,11 +26,10 @@ class AndroidAppAd extends StatelessWidget {
     return Center(
       child: LayoutBuilder(
         builder: (context, constraints) {
-          return ResponsiveScaledBox(
-            // maxWidth: width,
-            // minWidth: width,
-            // defaultScale: false,
-            width: width,
+          return ResponsiveWrapper(
+            maxWidth: width,
+            minWidth: width,
+            defaultScale: false,
             child: Flex(
               direction:
                   constraints.maxWidth > 720 ? Axis.horizontal : Axis.vertical,

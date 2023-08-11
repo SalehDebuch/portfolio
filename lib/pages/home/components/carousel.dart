@@ -71,11 +71,10 @@ class Carousel extends StatelessWidget {
 // Big screens
 Widget _buildDesktop(BuildContext context, Widget text, Widget image) {
   return Center(
-    child: ResponsiveScaledBox(
-      // maxWidth: kDesktopMaxWidth,
-      // minWidth: kDesktopMaxWidth,
-      // defaultScale: false,
-      width: kDesktopMaxWidth,
+    child: ResponsiveWrapper(
+      maxWidth: kDesktopMaxWidth,
+      minWidth: kDesktopMaxWidth,
+      defaultScale: false,
       child: Row(
         children: [
           Expanded(
@@ -93,11 +92,10 @@ Widget _buildDesktop(BuildContext context, Widget text, Widget image) {
 // Mid screens
 Widget _buildTablet(BuildContext context, Widget text, Widget image) {
   return Center(
-    child: ResponsiveScaledBox(
-      // maxWidth: kTabletMaxWidth,
-      // minWidth: kTabletMaxWidth,
-      // defaultScale: false,
-      width: kTabletMaxWidth,
+    child: ResponsiveWrapper(
+      maxWidth: kTabletMaxWidth,
+      minWidth: kTabletMaxWidth,
+      defaultScale: false,
       child: Row(
         children: [
           Expanded(
