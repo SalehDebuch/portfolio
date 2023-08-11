@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 
 class HeaderItem {
   final String title;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final bool isButton;
-  Color textColor;
+  Color? textColor;
 
   HeaderItem({
-    this.title,
+    required this.title,
     this.onTap,
+    this.textColor,
     this.isButton = false,
   });
 }

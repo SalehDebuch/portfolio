@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_framework/responsive_framework.dart';
-import 'package:flutter_portfolio/utils/constants.dart';
-import 'package:flutter_portfolio/utils/screen_helper.dart';
+
+import '../../../utils/constants.dart';
+import '../../../utils/screen_helper.dart';
 
 final List<String> sponsorsLogo = [
   "assets/brand1.png",
@@ -12,10 +12,12 @@ final List<String> sponsorsLogo = [
 ];
 
 class Sponsors extends StatelessWidget {
+  const Sponsors({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 50.0),
+      padding: const EdgeInsets.symmetric(vertical: 50.0),
       child: ScreenHelper(
         desktop: _buildUi(kDesktopMaxWidth),
         tablet: _buildUi(kTabletMaxWidth),
@@ -40,13 +42,13 @@ Widget _buildUi(double width) {
                 .map(
                   (logo) => Container(
                     height: 20.0,
-                    child: Image.asset(logo),
                     constraints: BoxConstraints(
                       // max of 3 per row when on mobile and 5 per row on bigger screens
                       maxWidth: ScreenHelper.isMobile(context)
                           ? constraints.maxWidth / 3.0 - 50.0
                           : constraints.maxWidth / 5.0 - 50.0,
                     ),
+                    child: Image.asset(logo),
                   ),
                 )
                 .toList(),

@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:flutter_portfolio/models/header_item.dart';
-import 'package:flutter_portfolio/utils/constants.dart';
-import 'package:flutter_portfolio/utils/globals.dart';
-import 'package:flutter_portfolio/utils/screen_helper.dart';
 
+import '../../../models/header_item.dart';
+import '../../../utils/constants.dart';
+import '../../../utils/globals.dart';
+import '../../../utils/screen_helper.dart';
 import '../controllers/scroll_helper.dart';
 
 List<HeaderItem> headerItems = [
   HeaderItem(
     title: "HOME",
-    onTap: () {},
   ),
   HeaderItem(
       title: "MY INTRO",
@@ -51,17 +49,17 @@ List<HeaderItem> headerItems = [
 
 // This widget represents the entire header of the app.
 class Header extends StatelessWidget {
+  const Header({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ScreenHelper(
-        desktop: Padding(
-          padding: EdgeInsets.symmetric(vertical: 8.0),
-          child: buildHeader(),
-        ),
-        mobile: buildMobileHeader(),
-        tablet: buildHeader(),
+    return ScreenHelper(
+      desktop: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: buildHeader(),
       ),
+      mobile: buildMobileHeader(),
+      tablet: buildHeader(),
     );
   }
 
@@ -69,18 +67,18 @@ class Header extends StatelessWidget {
   Widget buildMobileHeader() {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            HeaderLogo(),
+            const HeaderLogo(),
             GestureDetector(
               onTap: () {
                 // Open the drawer using the global scaffold key.
-                Globals.scaffoldKey.currentState.openEndDrawer();
+                Globals.scaffoldKey.currentState?.openEndDrawer();
               },
-              child: Icon(
-                FlutterIcons.menu_fea,
+              child: const Icon(
+                Icons.menu,
                 color: Colors.white,
                 size: 28.0,
               ),
@@ -94,8 +92,8 @@ class Header extends StatelessWidget {
   // This method returns the header for desktop and tablet devices.
   Widget buildHeader() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
-      child: Row(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           HeaderLogo(),
@@ -107,6 +105,8 @@ class Header extends StatelessWidget {
 }
 
 class HeaderLogo extends StatelessWidget {
+  const HeaderLogo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -145,13 +145,15 @@ class HeaderLogo extends StatelessWidget {
 
 // This widget represents a row of items in the header of the app.
 class HeaderRow extends StatelessWidget {
+  const HeaderRow({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ResponsiveVisibility(
       // This header row is only visible when the screen is larger than a mobile device.
       visible: false,
-      visibleWhen: [
-        Condition.largerThan(name: MOBILE),
+      visibleConditions: [
+        Condition.largerThan(value: MOBILE),
       ],
       // This row contains a list of header items, which can be either text or buttons.
       child: Row(
@@ -166,13 +168,13 @@ class HeaderRow extends StatelessWidget {
                           color: kDangerColor,
                           borderRadius: BorderRadius.circular(20.0),
                         ),
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                             horizontal: 20.0, vertical: 5.0),
                         child: TextButton(
                           onPressed: item.onTap,
                           child: Text(
                             item.title,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 13.0,
                               fontWeight: FontWeight.bold,
@@ -185,13 +187,13 @@ class HeaderRow extends StatelessWidget {
                       // Add a click cursor to non-button items.
                       cursor: SystemMouseCursors.click,
                       child: Container(
-                        margin: EdgeInsets.only(right: 30.0),
+                        margin: const EdgeInsets.only(right: 30.0),
                         child: InkWell(
                           onTap: item.onTap,
                           child: Text(
                             item.title,
-                            style: TextStyle(
-                              color: Colors.white,
+                            style: const TextStyle(
+                              color: Color.fromARGB(255, 28, 27, 27),
                               fontSize: 13.0,
                               fontWeight: FontWeight.bold,
                             ),

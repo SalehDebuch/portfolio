@@ -1,17 +1,19 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_framework/responsive_framework.dart';
-import 'package:flutter_portfolio/pages/home/components/carousel_items.dart';
-import 'package:flutter_portfolio/utils/constants.dart';
-import 'package:flutter_portfolio/utils/screen_helper.dart';
+
+import '../../../utils/constants.dart';
+import '../../../utils/screen_helper.dart';
+import 'carousel_items.dart';
 
 class Carousel extends StatelessWidget {
   final CarouselController carouselController = CarouselController();
+
+  Carousel({super.key});
   @override
   Widget build(BuildContext context) {
     double carouselContainerHeight = MediaQuery.of(context).size.height *
         (ScreenHelper.isMobile(context) ? .7 : .85);
-    return Container(
+    return SizedBox(
       height: carouselContainerHeight,
       width: double.infinity,
       child: Column(
@@ -24,7 +26,7 @@ class Carousel extends StatelessWidget {
               options: CarouselOptions(
                 // autoPlay: true,
                 viewportFraction: 1,
-                scrollPhysics: NeverScrollableScrollPhysics(),
+                scrollPhysics: const NeverScrollableScrollPhysics(),
                 height: carouselContainerHeight,
               ),
               items: List.generate(

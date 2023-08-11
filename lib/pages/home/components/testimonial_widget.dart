@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:flutter_portfolio/models/testimonial.dart';
-import 'package:flutter_portfolio/utils/constants.dart';
-import 'package:flutter_portfolio/utils/globals.dart';
-import 'package:flutter_portfolio/utils/screen_helper.dart';
+
+import '../../../models/testimonial.dart';
+import '../../../utils/constants.dart';
+import '../../../utils/globals.dart';
+import '../../../utils/screen_helper.dart';
 
 final List<Testimonial> testimonials = [
   Testimonial(
@@ -24,6 +25,8 @@ final List<Testimonial> testimonials = [
 ];
 
 class TestimonialWidget extends StatelessWidget {
+  const TestimonialWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,10 +44,11 @@ Widget _buildUi(double width) {
   return Center(
     child: LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        return ResponsiveWrapper(
-          maxWidth: width,
-          minWidth: width,
-          defaultScale: false,
+        return ResponsiveScaledBox(
+          // maxWidth: width,
+          // minWidth: width,
+          // defaultScale: false,
+          width: null,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -57,13 +61,13 @@ Widget _buildUi(double width) {
                   height: 1.3,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5.0,
               ),
               Container(
-                constraints: BoxConstraints(maxWidth: 400.0),
+                constraints: const BoxConstraints(maxWidth: 400.0),
                 child: RichText(
-                  text: TextSpan(
+                  text: const TextSpan(
                     children: [
                       TextSpan(
                         text:
@@ -85,7 +89,7 @@ Widget _buildUi(double width) {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 45.0,
               ),
               Flex(
@@ -98,27 +102,25 @@ Widget _buildUi(double width) {
                     flex: ScreenHelper.isMobile(context) ? 0 : 1,
                     child: Container(
                       padding: const EdgeInsets.all(8.0),
-                      margin: EdgeInsets.only(bottom: 50.0),
+                      margin: const EdgeInsets.only(bottom: 50.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                            child: Image.asset(
-                              "assets/quote.png",
-                              width: 50.0,
-                            ),
+                          Image.asset(
+                            "assets/quote.png",
+                            width: 50.0,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15.0,
                           ),
                           Text(
                             testimonial.text,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: kCaptionColor,
                               height: 1.8,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15.0,
                           ),
                           Row(
@@ -130,7 +132,7 @@ Widget _buildUi(double width) {
                                   testimonial.profilePhoto,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 20.0,
                               ),
                               Column(
@@ -144,12 +146,12 @@ Widget _buildUi(double width) {
                                       fontSize: 16.0,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 4.0,
                                   ),
                                   Text(
                                     testimonial.occupation,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       color: kCaptionColor,
                                     ),
                                   )

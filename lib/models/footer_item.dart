@@ -5,13 +5,13 @@ class FooterItem {
   final String title;
   final String text1;
   final String text2;
-  final VoidCallback onClick;
+  final VoidCallback? onClick;
 
   FooterItem({
     this.onClick,
-    @required this.iconPath,
-    @required this.title,
-    @required this.text1,
-    @required this.text2,
+    required this.iconPath,
+    required this.title,
+    required this.text1,
+    required this.text2,
   });
 }

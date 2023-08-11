@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:protfolio/utils/constants.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:flutter_portfolio/pages/home/home.dart';
-import 'package:flutter_portfolio/utils/constants.dart';
+
+import 'pages/home/components/home.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,21 +25,20 @@ class MyApp extends StatelessWidget {
         canvasColor: kBackgroundColor,
         textTheme: GoogleFonts.latoTextTheme(),
       ),
-      builder: (context, widget) => ResponsiveWrapper.builder(
-        ClampingScrollWrapper.builder(context, widget),
-        defaultScale: true,
+      builder: (context, child) => ResponsiveBreakpoints.builder(
+        child: child!,
         breakpoints: [
-          ResponsiveBreakpoint.resize(450, name: MOBILE),
-          ResponsiveBreakpoint.resize(800, name: TABLET),
-          ResponsiveBreakpoint.resize(1000, name: TABLET),
-          ResponsiveBreakpoint.resize(1200, name: DESKTOP),
-          ResponsiveBreakpoint.resize(2460, name: "4K"),
+          const Breakpoint(start: 0, end: 450, name: MOBILE),
+          const Breakpoint(start: 451, end: 800, name: TABLET),
+          const Breakpoint(start: 801, end: 1920, name: DESKTOP),
+          const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
         ],
-        background: Container(
-          color: kBackgroundColor,
-        ),
+
+        // background: Container(
+        //   color: kBackgroundColor,
+        // ),
       ),
-      home: Home(),
+      home: const Home(),
     );
   }
 }

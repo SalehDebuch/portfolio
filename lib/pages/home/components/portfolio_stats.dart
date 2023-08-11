@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:responsive_framework/responsive_framework.dart';
-import 'package:flutter_portfolio/models/stat.dart';
-import 'package:flutter_portfolio/utils/constants.dart';
-import 'package:flutter_portfolio/utils/screen_helper.dart';
+
+import '../../../models/stat.dart';
+import '../../../utils/constants.dart';
+import '../../../utils/screen_helper.dart';
 
 final List<Stat> stats = [
   Stat(count: "20", text: "Clients"),
@@ -13,6 +13,8 @@ final List<Stat> stats = [
 ];
 
 class PortfolioStats extends StatelessWidget {
+  const PortfolioStats({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,7 +40,7 @@ class PortfolioStats extends StatelessWidget {
               runSpacing: 20.0,
               children: stats.map((stat) {
                 return Container(
-                  padding: EdgeInsets.symmetric(vertical: 15.0),
+                  padding: const EdgeInsets.symmetric(vertical: 15.0),
                   // Just use the helper here really
                   width: ScreenHelper.isMobile(context)
                       ? constraint.maxWidth / 2.0 - 20
@@ -54,12 +56,12 @@ class PortfolioStats extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10.0,
                       ),
                       Text(
                         stat.text,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16.0,
                           color: kCaptionColor,
                         ),

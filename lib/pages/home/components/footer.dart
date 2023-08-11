@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:responsive_framework/responsive_framework.dart';
-import 'package:flutter_portfolio/models/footer_item.dart';
-import 'package:flutter_portfolio/utils/constants.dart';
-import 'package:flutter_portfolio/utils/globals.dart';
-import 'package:flutter_portfolio/utils/screen_helper.dart';
+
 import 'package:url_launcher/url_launcher.dart';
+
+import '../../../models/footer_item.dart';
+import '../../../utils/constants.dart';
+import '../../../utils/globals.dart';
+import '../../../utils/screen_helper.dart';
 
 final List<FooterItem> footerItems = [
   FooterItem(
@@ -13,14 +14,12 @@ final List<FooterItem> footerItems = [
     title: "ADDRESS",
     text1: "United Arab Emirates",
     text2: "Dubai, Albarsha 1",
-    //  onClick: () => ,
   ),
   FooterItem(
     iconPath: "assets/phone.png",
     title: "PHONE",
     text1: "+971 54-506-8089",
     text2: '',
-    //  onClick: () => ,
   ),
   FooterItem(
     iconPath: "assets/email.png",
@@ -33,12 +32,14 @@ final List<FooterItem> footerItems = [
     iconPath: "assets/whatsapp.png",
     title: "WHATSAPP",
     text1: "+971 54-506-8089",
-    text2: "",
+    text2: "", onClick: () {},
     // onClick: () => ,
   )
 ];
 
 class Footer extends StatelessWidget {
+  const Footer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -64,73 +65,71 @@ Widget _buildUi(double width, BuildContext context) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 50.0),
+                padding: const EdgeInsets.symmetric(vertical: 50.0),
                 child: Wrap(
                   spacing: 20.0,
                   runSpacing: 20.0,
                   children: footerItems
                       .map(
-                        (footerItem) => Container(
+                        (footerItem) => SizedBox(
                           height: 120.0,
                           width: ScreenHelper.isMobile(context)
                               ? constraints.maxWidth / 2.0 - 20.0
                               : constraints.maxWidth / 4.0 - 20.0,
-                          child: Container(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Image.asset(
+                                    footerItem.iconPath,
+                                    width: 25.0,
+                                  ),
+                                  const SizedBox(
+                                    width: 15.0,
+                                  ),
+                                  Text(
+                                    footerItem.title,
+                                    style: GoogleFonts.oswald(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 15.0,
+                              ),
+                              RichText(
+                                textAlign: TextAlign.start,
+                                text: TextSpan(
                                   children: [
-                                    Image.asset(
-                                      footerItem.iconPath,
-                                      width: 25.0,
-                                    ),
-                                    SizedBox(
-                                      width: 15.0,
-                                    ),
-                                    Text(
-                                      footerItem.title,
-                                      style: GoogleFonts.oswald(
-                                        fontSize: 18.0,
-                                        fontWeight: FontWeight.w700,
-                                        color: Colors.white,
+                                    TextSpan(
+                                      text: "${footerItem.text1}\n",
+                                      style: const TextStyle(
+                                        color: kCaptionColor,
+                                        height: 1.8,
                                       ),
                                     ),
+                                    TextSpan(
+                                      text: "${footerItem.text2}\n",
+                                      style: const TextStyle(
+                                        color: kCaptionColor,
+                                      ),
+                                    )
                                   ],
                                 ),
-                                SizedBox(
-                                  height: 15.0,
-                                ),
-                                RichText(
-                                  textAlign: TextAlign.start,
-                                  text: TextSpan(
-                                    children: [
-                                      TextSpan(
-                                        text: "${footerItem.text1}\n",
-                                        style: TextStyle(
-                                          color: kCaptionColor,
-                                          height: 1.8,
-                                        ),
-                                      ),
-                                      TextSpan(
-                                        text: "${footerItem.text2}\n",
-                                        style: TextStyle(
-                                          color: kCaptionColor,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
+                              )
+                            ],
                           ),
                         ),
                       )
                       .toList(),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
               ),
               Flex(
@@ -141,7 +140,7 @@ Widget _buildUi(double width, BuildContext context) {
                     ? MainAxisAlignment.center
                     : MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(bottom: 8.0),
                     child: Text(
                       "Copyright (c) 2023 Saleh El Debuch. All rights Reserved",
@@ -155,7 +154,7 @@ Widget _buildUi(double width, BuildContext context) {
                     children: [
                       GestureDetector(
                         onTap: () {},
-                        child: MouseRegion(
+                        child: const MouseRegion(
                           cursor: SystemMouseCursors.click,
                           child: Text(
                             "Privacy Policy",
@@ -166,8 +165,8 @@ Widget _buildUi(double width, BuildContext context) {
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Text(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: const Text(
                           "|",
                           style: TextStyle(
                             color: kCaptionColor,
@@ -176,7 +175,7 @@ Widget _buildUi(double width, BuildContext context) {
                       ),
                       GestureDetector(
                         onTap: () {},
-                        child: MouseRegion(
+                        child: const MouseRegion(
                           cursor: SystemMouseCursors.click,
                           child: Text(
                             "Terms & Conditions",
