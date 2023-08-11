@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 import '../../../models/education.dart';
 import '../../../utils/constants.dart';
@@ -51,10 +52,11 @@ class EducationSection extends StatelessWidget {
   Widget _buildUi(double width) {
     return Container(
       alignment: Alignment.center,
-      child: ResponsiveWrapper(
-        maxWidth: width,
-        minWidth: width,
-        defaultScale: false,
+      child: ResponsiveScaledBox(
+        // maxWidth: width,
+        // minWidth: width,
+        // defaultScale: false,
+        width: width,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [

@@ -48,7 +48,7 @@ Widget _buildUi(double width) {
           // maxWidth: width,
           // minWidth: width,
           // defaultScale: false,
-          width: null,
+          width: width,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

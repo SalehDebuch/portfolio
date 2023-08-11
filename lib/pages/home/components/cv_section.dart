@@ -53,10 +53,11 @@ class CvSection extends StatelessWidget {
 
   Widget _buildUi(BuildContext context, double width) {
     // we need the context to get maxWidth before the constraints below
-    return ResponsiveWrapper(
-      maxWidth: width,
-      minWidth: width,
-      defaultScale: false,
+    return ResponsiveScaledBox(
+      // maxWidth: width,
+      // minWidth: width,
+      // defaultScale: false,
+      width: width,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [

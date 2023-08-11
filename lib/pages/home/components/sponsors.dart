@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 import '../../../utils/constants.dart';
 import '../../../utils/screen_helper.dart';
@@ -29,10 +30,11 @@ class Sponsors extends StatelessWidget {
 
 Widget _buildUi(double width) {
   return Center(
-    child: ResponsiveWrapper(
-      minWidth: width,
-      maxWidth: width,
-      defaultScale: false,
+    child: ResponsiveScaledBox(
+      // minWidth: width,
+      // maxWidth: width,
+      // defaultScale: false,
+      width: width,
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return Wrap(

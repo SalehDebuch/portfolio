@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 import '../../../models/skill.dart';
 import '../../../utils/constants.dart';
@@ -54,9 +55,10 @@ class SkillSection extends StatelessWidget {
       key: Globals.skillsKey,
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-          return ResponsiveWrapper(
-            maxWidth: width,
-            minWidth: width,
+          return ResponsiveScaledBox(
+            // maxWidth: width,
+            // minWidth: width,
+            width: width,
             child: Flex(
               direction: ScreenHelper.isMobile(context)
                   ? Axis.vertical

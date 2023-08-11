@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
@@ -55,10 +56,11 @@ class Footer extends StatelessWidget {
 
 Widget _buildUi(double width, BuildContext context) {
   return Center(
-    child: ResponsiveWrapper(
-      maxWidth: width,
-      minWidth: width,
-      defaultScale: false,
+    child: ResponsiveScaledBox(
+      // maxWidth: width,
+      // minWidth: width,
+      // defaultScale: false,
+      width: width,
       child: LayoutBuilder(
         builder: (context, constraints) {
           return Column(

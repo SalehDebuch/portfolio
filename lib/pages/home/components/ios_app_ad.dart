@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 import '../../../utils/constants.dart';
 import '../../../utils/globals.dart';
@@ -25,10 +26,11 @@ class IOSAppAd extends StatelessWidget {
     return Center(
       child: LayoutBuilder(
         builder: (context, constraints) {
-          return ResponsiveWrapper(
-            maxWidth: width,
-            minWidth: width,
-            defaultScale: false,
+          return ResponsiveScaledBox(
+            // maxWidth: width,
+            // minWidth: width,
+            // defaultScale: false,
+            width: width,
             child: Flex(
               direction:
                   constraints.maxWidth > 720 ? Axis.horizontal : Axis.vertical,

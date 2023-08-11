@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 import '../../../utils/constants.dart';
 import '../../../utils/screen_helper.dart';
@@ -70,10 +71,11 @@ class Carousel extends StatelessWidget {
 // Big screens
 Widget _buildDesktop(BuildContext context, Widget text, Widget image) {
   return Center(
-    child: ResponsiveWrapper(
-      maxWidth: kDesktopMaxWidth,
-      minWidth: kDesktopMaxWidth,
-      defaultScale: false,
+    child: ResponsiveScaledBox(
+      // maxWidth: kDesktopMaxWidth,
+      // minWidth: kDesktopMaxWidth,
+      // defaultScale: false,
+      width: kDesktopMaxWidth,
       child: Row(
         children: [
           Expanded(
@@ -91,10 +93,11 @@ Widget _buildDesktop(BuildContext context, Widget text, Widget image) {
 // Mid screens
 Widget _buildTablet(BuildContext context, Widget text, Widget image) {
   return Center(
-    child: ResponsiveWrapper(
-      maxWidth: kTabletMaxWidth,
-      minWidth: kTabletMaxWidth,
-      defaultScale: false,
+    child: ResponsiveScaledBox(
+      // maxWidth: kTabletMaxWidth,
+      // minWidth: kTabletMaxWidth,
+      // defaultScale: false,
+      width: kTabletMaxWidth,
       child: Row(
         children: [
           Expanded(
