@@ -13,25 +13,25 @@ final List<DesignProcess> designProcesses = [
     title: "Design",
     imagePath: "assets/design.png",
     subtitle:
-        "As a full-stack developer, I can create intuitive, user-friendly designs that seamlessly integrate with the app's functionality.",
+        "Crafting intuitive, user-friendly designs that seamlessly integrate with app functionality.",
   ),
   DesignProcess(
     title: "Develop",
     imagePath: "assets/develop.png",
     subtitle:
-        "With extensive experience in Flutter development, I can bring your app ideas to life with robust, scalable, and high-performance code.",
+        "Bringing app ideas to life with robust, scalable, and high-performance code.",
   ),
   DesignProcess(
     title: "Test",
     imagePath: "assets/write.png",
     subtitle:
-        "As a detail-oriented Flutter developer, I can ensure that your app meets the highest standards of quality and reliability.",
+        "Ensuring apps meet the highest standards of quality and reliability as a detail-oriented Full-stack developer.",
   ),
   DesignProcess(
     title: "Deploy",
     imagePath: "assets/promote.png",
     subtitle:
-        "With expertise in deploying Flutter apps to various platforms, I can help your app reach a wider audience and ensure a seamless user experience across all devices.",
+        "Expertise in deploying Flutter apps to reach wider audiences, ensuring seamless experiences across devices.",
   )
 ];
 

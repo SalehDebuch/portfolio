@@ -1,40 +1,45 @@
 import 'package:flutter/material.dart';
+
 import 'package:google_fonts/google_fonts.dart';
+
 import 'package:responsive_framework/responsive_framework.dart';
 
 import '../../../models/skill.dart';
+
+
+
 import '../../../utils/constants.dart';
 import '../../../utils/globals.dart';
 import '../../../utils/screen_helper.dart';
 
 List<Skill> skills = [
   Skill(
-    skill: "Dart",
+    skill: "Flutter, Dart, GetX, Provider",
     percentage: 90,
   ),
   Skill(
-    skill: "API",
+    skill: "Laravel,API, PHP,Firebase",
+    percentage: 80,
+  ),
+  Skill(
+    skill: "MySQL, SQL, MongoDB",
+    percentage: 80,
+  ),
+  Skill(
+    skill: "Google Play, Appstore, Servers",
+    percentage: 80,
+  ),
+  Skill(
+    skill: "Pythone, Neural Network",
+    percentage: 70,
+  ),
+  Skill(
+    skill: "Problem solving, Team work, Communication",
     percentage: 90,
   ),
   Skill(
-    skill: "Android",
-    percentage: 80,
-  ),
-  Skill(
-    skill: "IOS",
-    percentage: 80,
-  ),
-  Skill(
-    skill: "Web",
-    percentage: 80,
-  ),
-  Skill(
-    skill: "Laravel",
-    percentage: 80,
-  ),
-  Skill(
-    skill: "Pythone",
-    percentage: 80,
+    skill: "HTML, CSS, JavaScript",
+    percentage: 60,
   ),
 ];
 
@@ -63,13 +68,20 @@ class SkillSection extends StatelessWidget {
                   ? Axis.vertical
                   : Axis.horizontal,
               children: [
-                Expanded(
-                  flex: ScreenHelper.isMobile(context) ? 0 : 2,
-                  child: Image.asset(
-                    "assets/person_small.png",
-                    width: 300.0,
-                  ),
-                ),
+                //  Expanded(
+                //     flex: ScreenHelper.isMobile(context) ? 0 : 2,
+                // child: CircleAvatar(
+                //   radius: 100,
+                //   backgroundColor: Colors.transparent,
+                //   child: ClipOval(
+                //     child: Image.asset(
+                //       'assets/person.png',
+                //       fit: BoxFit
+                //           .contain, // This will fit the image within the circle without cropping
+                //     ),
+                //   ),
+                // ),
+                //   ),
                 const SizedBox(
                   width: 50.0,
                 ),
@@ -92,7 +104,7 @@ class SkillSection extends StatelessWidget {
                         height: 10.0,
                       ),
                       const Text(
-                        "This is all the skills listed below more will be added in due time. This is all the skills listed below more will be added in due time.",
+                        "The skills listed below are a testament to my expertise, with ongoing additions in the pipeline",
                         style: TextStyle(
                           color: kCaptionColor,
                           height: 1.5,

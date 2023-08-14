@@ -6,11 +6,12 @@ import '../../../models/header_item.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/globals.dart';
 import '../../../utils/screen_helper.dart';
-import '../controllers/scroll_helper.dart';
+import '../utils/scroll_helper.dart';
 
 List<HeaderItem> headerItems = [
   HeaderItem(
     title: "HOME",
+    onTap: () {},
   ),
   HeaderItem(
       title: "MY INTRO",
@@ -20,9 +21,8 @@ List<HeaderItem> headerItems = [
   HeaderItem(
       title: "MY PROJECTS",
       onTap: () {
-        ScrollHelper.scrollTo(Globals.iosKey);
+        ScrollHelper.scrollTo(Globals.firstAppKey);
       }),
-
   // HeaderItem(
   //     title: "EXPERINCES",
   //     onTap: () {
@@ -76,7 +76,7 @@ class Header extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 // Open the drawer using the global scaffold key.
-                Globals.scaffoldKey.currentState?.openEndDrawer();
+                Globals.scaffoldKey.currentState!.openEndDrawer();
               },
               child: const Icon(
                 Icons.menu,
@@ -153,9 +153,9 @@ class HeaderRow extends StatelessWidget {
     return ResponsiveVisibility(
       // This header row is only visible when the screen is larger than a mobile device.
       visible: false,
-      // visibleConditions: [
-      //   Condition.largerThan(value: MOBILE),
-      // ],
+      visibleWhen: const [
+        Condition.largerThan(name: MOBILE),
+      ],
       // This row contains a list of header items, which can be either text or buttons.
       child: Row(
         children: headerItems
@@ -194,7 +194,7 @@ class HeaderRow extends StatelessWidget {
                           child: Text(
                             item.title,
                             style: const TextStyle(
-                              color: Color.fromARGB(255, 28, 27, 27),
+                              color: Colors.white,
                               fontSize: 13.0,
                               fontWeight: FontWeight.bold,
                             ),

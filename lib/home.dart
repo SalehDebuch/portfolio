@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/pages/home/components/website_ad.dart';
-
-import '../../../utils/constants.dart';
-import '../../../utils/globals.dart';
-import 'android_app_ad.dart';
-import 'carousel.dart';
-import 'cv_section.dart';
-import 'footer.dart';
-import 'header.dart';
-import 'ios_app_ad.dart';
-import 'portfolio_stats.dart';
-import 'skill_section.dart';
-import 'sponsors.dart';
-import 'testimonial_widget.dart';
+import 'package:protfolio/utils/constants.dart';
+import 'package:protfolio/utils/globals.dart';
+import 'package:protfolio/view/carousel.dart';
+import 'package:protfolio/view/cv_section.dart';
+import 'package:protfolio/view/first_app_ad.dart';
+import 'package:protfolio/view/first_dashboard_ad.dart';
+import 'package:protfolio/view/footer.dart';
+import 'package:protfolio/view/header.dart';
+import 'package:protfolio/view/portfolio_stats.dart';
+import 'package:protfolio/view/second_app_ad.dart';
+import 'package:protfolio/view/skill_section.dart';
+import 'package:protfolio/view/testimonial_widget.dart';
+import 'package:protfolio/view/website_ad.dart';
 
 final _scrollController = ScrollController();
 
@@ -84,11 +83,19 @@ class Home extends StatelessWidget {
               height: 20.0,
             ),
             const CvSection(),
-            const IOSAppAd(),
             const SizedBox(
               height: 70.0,
             ),
-            const AndroidAppAd(),
+
+            const FirstAppAd(),
+            const SizedBox(
+              height: 70.0,
+            ),
+            const FirstDashboardAd(),
+            const SizedBox(
+              height: 70.0,
+            ),
+            const SecondAppAd(),
             const SizedBox(
               height: 70.0,
             ),
@@ -108,10 +115,10 @@ class Home extends StatelessWidget {
             const SizedBox(
               height: 50.0,
             ),
-            const Sponsors(),
-            const SizedBox(
-              height: 50.0,
-            ),
+            // const Sponsors(),
+            // const SizedBox(
+            //   height: 50.0,
+            //),
             const TestimonialWidget(),
             const Footer(),
           ],

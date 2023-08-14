@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../utils/constants.dart';
 import '../../../utils/globals.dart';
 import '../../../utils/screen_helper.dart';
+import '../utils/scroll_helper.dart';
 
-class WebsiteAd extends StatelessWidget {
-  const WebsiteAd({super.key});
+class SecondAppAd extends StatelessWidget {
+  const SecondAppAd({super.key});
 
-  // We can use same idea as ios_app_ad.dart and swap children order, let's copy code
   @override
   Widget build(BuildContext context) {
     return Container(
-      key: Globals.webKey,
+      key: Globals.secondAppKey,
       child: ScreenHelper(
         desktop: _buildUi(kDesktopMaxWidth),
         tablet: _buildUi(kTabletMaxWidth),
@@ -37,33 +36,26 @@ class WebsiteAd extends StatelessWidget {
                   constraints.maxWidth > 720 ? Axis.horizontal : Axis.vertical,
               children: [
                 // Disable expanded on smaller screen to avoid Render errors by setting flex to 0
-                Expanded(
-                  flex: constraints.maxWidth > 720.0 ? 1 : 0,
-                  child: Image.asset(
-                    "assets/laptop.png",
-                    // Set width for image on smaller screen
-                    width: constraints.maxWidth > 720.0 ? null : 350.0,
-                  ),
-                ),
+
                 Expanded(
                   flex: constraints.maxWidth > 720.0 ? 1 : 0,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      // Text(
+                      //   "Android APP",
+                      //   style: GoogleFonts.oswald(
+                      //     color: kPrimaryColor,
+                      //     fontWeight: FontWeight.w900,
+                      //     fontSize: 16.0,
+                      //   ),
+                      // ),
+                      // const SizedBox(
+                      //   height: 15.0,
+                      // ),
                       Text(
-                        "Web APP",
-                        style: GoogleFonts.oswald(
-                          color: kPrimaryColor,
-                          fontWeight: FontWeight.w900,
-                          fontSize: 16.0,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 15.0,
-                      ),
-                      Text(
-                        "BMI\nHealth care APP",
+                        "Ranem App\nBooking Doctor appointment",
                         style: GoogleFonts.oswald(
                           color: Colors.white,
                           fontWeight: FontWeight.w900,
@@ -75,7 +67,7 @@ class WebsiteAd extends StatelessWidget {
                         height: 10.0,
                       ),
                       const Text(
-                        "The BMI calculor app is a beautiful Body mass index (BMI) calculator app.  By building this app, I was able to demonstrate my skills in creating beautiful, user-friendly apps that meet the needs of modern UI.",
+                        "Reserving app to make online scedulas sessions for doctor's clients, Based in Flutter,Firebase and integrated API from backend side, notificatioon system, Authintication,payment and vedio meeting all project   ",
                         style: TextStyle(
                           color: kCaptionColor,
                           height: 1.5,
@@ -96,14 +88,10 @@ class WebsiteAd extends StatelessWidget {
                               ),
                               height: 48.0,
                               padding: const EdgeInsets.symmetric(
-                                horizontal: 40.0,
+                                horizontal: 28.0,
                               ),
                               child: TextButton(
-                                onPressed: () async {
-                                  if (!await launchUrl(url2)) {
-                                    throw Exception('Could not launch $url2');
-                                  }
-                                },
+                                onPressed: () {},
                                 child: const Center(
                                   child: Text(
                                     "EXPLORE MORE",
@@ -117,11 +105,52 @@ class WebsiteAd extends StatelessWidget {
                               ),
                             ),
                           ),
+                          const SizedBox(
+                            width: 10.0,
+                          ),
+                          MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8.0),
+                                border: Border.all(
+                                  color: kPrimaryColor,
+                                ),
+                              ),
+                              height: 48.0,
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 28.0),
+                              child: TextButton(
+                                onPressed: () {
+                                  ScrollHelper.scrollTo(Globals.webAppKey);
+                                },
+                                child: const Center(
+                                  child: Text(
+                                    "NEXT APP",
+                                    style: TextStyle(
+                                      color: kPrimaryColor,
+                                      fontSize: 13.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )
                         ],
-                      ),
+                      )
                     ],
                   ),
-                )
+                ),
+                Expanded(
+                  flex: constraints.maxWidth > 720.0 ? 1 : 0,
+                  child: Image.asset(
+                    "assets/second_app.png",
+                    // Set width for image on smaller screen
+                    width: 200,
+                    height: 500,
+                  ),
+                ),
               ],
             ),
           );

@@ -5,15 +5,15 @@ import 'package:responsive_framework/responsive_framework.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/globals.dart';
 import '../../../utils/screen_helper.dart';
-import '../controllers/scroll_helper.dart';
+import '../utils/scroll_helper.dart';
 
-class AndroidAppAd extends StatelessWidget {
-  const AndroidAppAd({super.key});
+class FirstAppAd extends StatelessWidget {
+  const FirstAppAd({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      key: Globals.androidKey,
+      key: Globals.firstAppKey,
       child: ScreenHelper(
         desktop: _buildUi(kDesktopMaxWidth),
         tablet: _buildUi(kTabletMaxWidth),
@@ -35,26 +35,34 @@ class AndroidAppAd extends StatelessWidget {
                   constraints.maxWidth > 720 ? Axis.horizontal : Axis.vertical,
               children: [
                 // Disable expanded on smaller screen to avoid Render errors by setting flex to 0
-
+                Expanded(
+                  flex: constraints.maxWidth > 720.0 ? 1 : 0,
+                  child: Image.asset(
+                    "assets/first_app.png",
+                    height: 500.0,
+                    // Set width for image on smaller screen
+                    width: 200.0,
+                  ),
+                ),
                 Expanded(
                   flex: constraints.maxWidth > 720.0 ? 1 : 0,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      // Text(
+                      //   "IOS APP",
+                      //   style: GoogleFonts.oswald(
+                      //     color: kPrimaryColor,
+                      //     fontWeight: FontWeight.w900,
+                      //     fontSize: 16.0,
+                      //   ),
+                      // ),
+                      // const SizedBox(
+                      //   height: 15.0,
+                      // ),
                       Text(
-                        "Android APP",
-                        style: GoogleFonts.oswald(
-                          color: kPrimaryColor,
-                          fontWeight: FontWeight.w900,
-                          fontSize: 16.0,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 15.0,
-                      ),
-                      Text(
-                        "Labpedia\nMEdical  APP",
+                        "Dmedlab\nMedical reference App ",
                         style: GoogleFonts.oswald(
                           color: Colors.white,
                           fontWeight: FontWeight.w900,
@@ -66,7 +74,7 @@ class AndroidAppAd extends StatelessWidget {
                         height: 10.0,
                       ),
                       const Text(
-                        "The Labpedia app is a medical reference tool that I developed using Flutter with laravel backend. It features a user-friendly interface, smart search functionality, and secure authentication and payment processing. I built the app's APIs, database, and handle local storage caching to ensure optimal performance . This project allowed me to showcase my expertise in Flutter development and build a high-quality app that provides value to healthcare professionals and doctors alike.",
+                        "Dmedlab is referance app for doctors and health care providers, Using Flutter, Laravel, MySql I was able to design and develop the android,IOS app and deploy it successfully to the store. \n Smart search, stripe payment and key activation all included in dmellab ",
                         style: TextStyle(
                           color: kCaptionColor,
                           height: 1.5,
@@ -121,7 +129,7 @@ class AndroidAppAd extends StatelessWidget {
                                   const EdgeInsets.symmetric(horizontal: 28.0),
                               child: TextButton(
                                 onPressed: () {
-                                  ScrollHelper.scrollTo(Globals.webKey);
+                                  ScrollHelper.scrollTo(Globals.firstDashboard);
                                 },
                                 child: const Center(
                                   child: Text(
@@ -140,15 +148,7 @@ class AndroidAppAd extends StatelessWidget {
                       )
                     ],
                   ),
-                ),
-                Expanded(
-                  flex: constraints.maxWidth > 720.0 ? 1 : 0,
-                  child: Image.asset(
-                    "assets/android.png",
-                    // Set width for image on smaller screen
-                    width: constraints.maxWidth > 720.0 ? null : 350.0,
-                  ),
-                ),
+                )
               ],
             ),
           );

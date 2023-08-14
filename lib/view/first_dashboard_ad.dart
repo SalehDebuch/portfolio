@@ -5,15 +5,15 @@ import 'package:responsive_framework/responsive_framework.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/globals.dart';
 import '../../../utils/screen_helper.dart';
-import '../controllers/scroll_helper.dart';
+import '../utils/scroll_helper.dart';
 
-class IOSAppAd extends StatelessWidget {
-  const IOSAppAd({super.key});
+class FirstDashboardAd extends StatelessWidget {
+  const FirstDashboardAd({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      key: Globals.iosKey,
+      key: Globals.firstDashboard,
       child: ScreenHelper(
         desktop: _buildUi(kDesktopMaxWidth),
         tablet: _buildUi(kTabletMaxWidth),
@@ -38,7 +38,8 @@ class IOSAppAd extends StatelessWidget {
                 Expanded(
                   flex: constraints.maxWidth > 720.0 ? 1 : 0,
                   child: Image.asset(
-                    "assets/ios.png",
+                    "assets/first_dashboard.png",
+
                     // Set width for image on smaller screen
                     width: constraints.maxWidth > 720.0 ? null : 350.0,
                   ),
@@ -49,19 +50,19 @@ class IOSAppAd extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      // Text(
+                      //   "IOS APP",
+                      //   style: GoogleFonts.oswald(
+                      //     color: kPrimaryColor,
+                      //     fontWeight: FontWeight.w900,
+                      //     fontSize: 16.0,
+                      //   ),
+                      // ),
+                      // const SizedBox(
+                      //   height: 15.0,
+                      // ),
                       Text(
-                        "IOS APP",
-                        style: GoogleFonts.oswald(
-                          color: kPrimaryColor,
-                          fontWeight: FontWeight.w900,
-                          fontSize: 16.0,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 15.0,
-                      ),
-                      Text(
-                        "Marketly\nE-commerce APP",
+                        "Dmedlab Dashboard",
                         style: GoogleFonts.oswald(
                           color: Colors.white,
                           fontWeight: FontWeight.w900,
@@ -73,7 +74,7 @@ class IOSAppAd extends StatelessWidget {
                         height: 10.0,
                       ),
                       const Text(
-                        "Marketly is an e-commerce app that I developed using Flutter. The app allows users to browse and purchase products from various categories, including clothing, and home goods. With a user-friendly interface and intuitive design, Marketly makes online shopping easy and convenient. I implemented features such as product search, shopping cart management. This project allowed me to showcase my expertise in Flutter development and create a high-quality app that meets the needs of modern consumers",
+                        "Dmedlab is referance app for doctors and health care providers, Using Flutter, Laravel, MySql I was able to design and develop the android,IOS app and deploy it successfully to the store. \n Smart search, stripe payment and key activation all included in dmellab ",
                         style: TextStyle(
                           color: kCaptionColor,
                           height: 1.5,
@@ -128,7 +129,7 @@ class IOSAppAd extends StatelessWidget {
                                   const EdgeInsets.symmetric(horizontal: 28.0),
                               child: TextButton(
                                 onPressed: () {
-                                  ScrollHelper.scrollTo(Globals.androidKey);
+                                  ScrollHelper.scrollTo(Globals.secondAppKey);
                                 },
                                 child: const Center(
                                   child: Text(

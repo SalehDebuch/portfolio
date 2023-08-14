@@ -70,18 +70,7 @@ Widget _buildUi(double width) {
                     children: [
                       TextSpan(
                         text:
-                            "This is the portfolio section. There is alot of work here",
-                        style: TextStyle(color: Colors.white, height: 1.8),
-                      ),
-                      TextSpan(
-                          text: " click here to contact us",
-                          style: TextStyle(
-                            color: kPrimaryColor,
-                            fontWeight: FontWeight.w700,
-                            height: 1.8,
-                          )),
-                      TextSpan(
-                        text: ". Please subscribe to me youtube channel :-)",
+                            "This is the portfolio section. There is alot of work here. \nPlease contact me for more details :-)",
                         style: TextStyle(color: Colors.white, height: 1.8),
                       ),
                     ],

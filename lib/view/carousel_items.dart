@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../models/carousel_item_model.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/globals.dart';
-import '../controllers/scroll_helper.dart';
+import '../utils/scroll_helper.dart';
 
 List<CarouselItemModel> carouselItems = List.generate(
     5,
@@ -41,7 +41,7 @@ List<CarouselItemModel> carouselItems = List.generate(
               height: 10.0,
             ),
             const Text(
-              "Full-stack developer based in Dubai, Experienced in designing and developing innovative, user-friendly cross-platform applications for [iOS-Android-web].\nSkilled in Dart with Laravel backend",
+              "Experienced Full-Stack Mobile App Developer based in Dubai with a passion for crafting innovative cross-platform solutions.\nSkilled in Flutter,Laravel and Firebasse to build high-performing native iOS, Android, and web applications.",
               style: TextStyle(
                 color: kCaptionColor,
                 fontSize: 15.0,
@@ -51,7 +51,7 @@ List<CarouselItemModel> carouselItems = List.generate(
             Wrap(
               children: [
                 const Text(
-                  "Need a full custom app?",
+                  "Need a full custom app? ",
                   style: TextStyle(
                     color: kCaptionColor,
                     fontSize: 15.0,
@@ -88,16 +88,27 @@ List<CarouselItemModel> carouselItems = List.generate(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 28.0,
                 ),
-                child: TextButton(
-                  onPressed: () {
-                    ScrollHelper.scrollTo(Globals.cvSectionKey);
-                  },
-                  child: const Text(
-                    "GET STARTED",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 13.0,
-                      fontWeight: FontWeight.bold,
+                child: Material(
+                  color: Colors
+                      .transparent, // Make the Material widget transparent
+                  child: InkWell(
+                    onTap: () {
+                      ScrollHelper.scrollTo(Globals.cvSectionKey);
+                    },
+                    splashColor: Colors.white
+                        .withOpacity(0.3), // Customize the splash color
+                    hoverColor: Colors.white
+                        .withOpacity(0.1), // Customize the hover color
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: const Center(
+                      child: Text(
+                        "GET STARTED",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 13.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ),
                 ),

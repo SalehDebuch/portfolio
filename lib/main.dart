@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:protfolio/pages/home/components/home.dart';
+import 'package:protfolio/home.dart';
+import 'package:protfolio/utils/break_points.dart';
 import 'package:protfolio/utils/constants.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -28,11 +29,10 @@ class MyApp extends StatelessWidget {
         ClampingScrollWrapper.builder(context, widget!),
         defaultScale: true,
         breakpoints: [
-          const ResponsiveBreakpoint.resize(450, name: MOBILE),
-          const ResponsiveBreakpoint.resize(800, name: TABLET),
-          const ResponsiveBreakpoint.resize(1000, name: TABLET),
-          const ResponsiveBreakpoint.resize(1200, name: DESKTOP),
-          const ResponsiveBreakpoint.resize(2460, name: "4K"),
+          kMobileResponsiveBreakpoint,
+          kTabletResponsiveBreakpoint,
+          kDesktopResponsiveBreakpoint,
+          // Add more responsive breakpoints from breakpoints.dart
         ],
         background: Container(
           color: kBackgroundColor,
